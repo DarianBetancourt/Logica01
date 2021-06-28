@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   
+
+    <title>Codificador DUFAT</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  
+
+
+
+
+<meta name="theme-color" content="#7952b3">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="./css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    
+    <div class="col-lg-8 mx-auto p-3 py-md-5">
+      <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+        <a href="#" class="d-flex align-items-center text-dark text-decoration-none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-code-square" viewBox="0 0 16 16">
+            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+            <path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z"/>
+          </svg>
+        
+          <span class="fs-4"> <h1>Codificador Dufat</h1></span>
+        </a>
+      </header>
+
+      <main>
+
+        <div class="card w-50">
+        <div class="card-body">
+          <h5 class="card-title">Codificador Dufat</h5>
+          <p class="card-text">serve para "criptografar" ou "descriptografar" uma string de texto</p>
+          <div class="input-group">
+                <span class="input-group-text">insira o texto</span>
+                <input type="text" aria-label="First name" class="form-control" id=texto>
+                <a href="#" class="btn btn-warning" id="limpiar">Limpar</a>
+          </div>
+          <br>
+          <div class="form-floating">
+            <textarea readonly class="form-control" placeholder="Leave a comment here" id="resultado" style="height: 100px"></textarea>
+            <label for="floatingTextarea2"></label>
+          </div>
+          <br>
+          <a href="#" class="btn btn-primary" id="encriptar">Criptografar</a>
+          <a href="#" class="btn btn-success" id="desencriptar">Descriptografar</a>
+          
+        </div>
+      </div>
+      <br>    
+        <h2>A lógica usada é a seguinte</h2>
+        <p class="fs-5 col-md-8">O texto digitado pelo usuário é retirado e dependendo do botão que é pressionado, gera os seguintes passos</p>
+        <p class="fs-5 col-md-8"><strong>Criptografar</strong></p>
+        <p class="fs-5 col-md-8">irá converter o string de caracteres em um arranjo para depois percorrê-lo e mudar as vogais na ordem especificada pelos strings de texto indicados nas premissas</p>
+        <p class="fs-5 col-md-8"><strong>Descriptografar</strong></p>
+          
+        <p class="fs-5 col-md-8">pega o texto inserido e procura nele a substring especificada e na ordem especificada e os substitui pela vogal indicada nas regras  </p>
+          
+        <p class="fs-5 col-md-8"> <strong>Limpar</strong>  </p>
+          
+        <p class="fs-5 col-md-8"> apaga o texto inserido e o resultado ao pressionar qualquer um dos botões de criptografar ou descriptografar</p>
+
+        <div class="mb-5">
+          <a href="#" class="btn btn-primary btn-lg px-4">Download zip del proyecto</a>
+        </div>
+
+        <hr class="col-3 col-md-2 mb-5">
+
+        <div class="row g-5">
+          <div class="col-md-6">
+            <h4>Codificador/Decodificador Dufat</h4>
+            <p>Exercício em que algum texto é encriptado seguindo as seguintes premissas (Regras):</p>
+            <ul class="icon-list">
+                <li>
+                  <ul>Precisa seguir a ordem "e,i,a,o,u" 
+                      
+                          <li class="text-muted">"e" é convertido para "enter"</li>
+                          <li class="text-muted">"i" é convertido para "imes"</li>
+                          <li class="text-muted">"a" é convertido para "ai"</li>
+                          <li class="text-muted">"o" é convertido para "ober"</li>
+                          <li class="text-muted">"u" é convertido para "ufat"</li>
+                     
+                  </ul>
+                </li>
+                <li >Apenas aceita letras minusculas</li>
+                <li >Não permite acentuação</li>
+            </ul>
+          </div>
+
+          <div class="col-md-6">
+            <h2>Guia</h2>
+              <p> Algoritmo executado </p>
+            <ul class = "icon-list">
+              <li> <a href="#"> Lógica e algoritmo usados ​​</a> </li>
+              <li> <a href="#">html</a> </li>
+              <li> <a href="#">css</a> </li>
+              <li> <a href="#">javascript</a ></li>
+            </ul>
+          </div>
+        </div>
+      </main>
+      <footer class="pt-5 my-5 text-muted border-top">
+        Criado por Darian Betancourt com Boostrap v5
+      </footer>
+    </div>
+
+
+    <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./js/javascript.js"></script>
+      
+  </body>
+</html>
